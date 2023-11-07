@@ -1,9 +1,5 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Globalization;
 
 namespace ConsoleApp1
 {
@@ -129,12 +125,32 @@ namespace ConsoleApp1
             } while (horaDigitada < 18);
 
             //-----------------------------------------------------------------
+            //Listas----------------------------------------------------------
+            //-----------------------------------------------------------------
+
+            var nomes = new List<string> { "<nome>", "Ana", "Marcio" };
+
+            nomes.Add("Diogo");
+            nomes.Add("João");
+            nomes.Add("Karla");
+            nomes.RemoveAt(0);
+
+            var index = nomes.IndexOf("Diogo");
+
+            nomes.Sort();
+
+            foreach (var item in nomes)
+            {
+                Console.WriteLine($"Olá {item}");
+            }
+
+            //-----------------------------------------------------------------
             //VETORES----------------------------------------------------------
             //-----------------------------------------------------------------
 
-            
+
             double soma, media1;
-            
+
             Console.WriteLine("Quantas notas serão calculadas?");
             int N = int.Parse(Console.ReadLine());
             double[] vetor1 = new double[N];
@@ -142,12 +158,12 @@ namespace ConsoleApp1
             for (int i = 0; i < N; i++)
             {
                 Console.WriteLine("Digite uma nota");
-                vetor1[i] = double.Parse(Console.ReadLine()); 
+                vetor1[i] = double.Parse(Console.ReadLine());
             }
 
             media1 = 0;
             soma = 0;
-            
+
             for (int i = 0; i < N; i++)
             {
                 soma = soma + vetor1[i];
